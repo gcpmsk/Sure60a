@@ -1,6 +1,6 @@
 import React, {useEffect,useRef} from 'react';
 import {X,LoaderCircle,ArrowRight,GraduationCap} from 'lucide-react';
-export function Button({children,variant='primary',className='',busy=false,icon:Icon,...props}) {return <button className={`btn btn-${variant} ${className}`} disabled={busy||props.disabled} {...props}>{busy?<LoaderCircle size={17} className="spin"/>:Icon?<Icon size={17}/>:null}{children}</button>;}
+export function Button({children,variant='primary',className='',busy=false,icon:Icon,...props}) {return <button className={`btn btn-${variant} ${className}`} {...props} disabled={busy||props.disabled}>{busy?<LoaderCircle size={17} className="spin"/>:Icon?<Icon size={17}/>:null}{children}</button>;}
 export function Field({label,children,hint,...props}) {return <label className="field"><span>{label}</span>{children||<input {...props}/>} {hint&&<small>{hint}</small>}</label>;}
 export function Empty({icon:Icon=GraduationCap,title,children,action}) {return <div className="empty"><div className="empty-icon"><Icon size={30}/></div><h3>{title}</h3><p>{children}</p>{action}</div>;}
 export function Modal({title,children,onClose,wide=false}) {
